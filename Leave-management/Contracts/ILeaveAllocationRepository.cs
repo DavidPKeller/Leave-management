@@ -1,12 +1,12 @@
-﻿using Leave_management.Data;
+﻿using leave_management.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Leave_management.Contracts
+namespace leave_management.Contracts
 {
-  public  interface ILeaveAllocationRepository : IRepositoryBase<LeaveAllocation>
+    public interface ILeaveAllocationRepository : IRepositoryBase<LeaveAllocation>
     {
     }
 }

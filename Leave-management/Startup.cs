@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,16 +7,16 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
-using Leave_management.Data;
+using leave_management.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Leave_management.Contracts;
-using Leave_management.Repository;
+using leave_management.Repository;
+using leave_management.Contracts;
 using AutoMapper;
-using Leave_management.Mappings;
+using leave_management.Mappings;
 
-namespace Leave_management
+namespace leave_management
 {
     public class Startup
     {
@@ -35,14 +34,11 @@ namespace Leave_management
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            //D:  Add references for Repository and Contracts to Startup File
             services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
-            services.AddScoped<ILeaveAllocationRepository,LeaveAllocationRepository>();
             services.AddScoped<ILeaveHistoryRepository, LeaveHistoryRepository>();
+            services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
 
             services.AddAutoMapper(typeof(Maps));
-
-            //D: ===============================================================================
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();

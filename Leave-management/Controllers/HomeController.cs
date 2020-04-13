@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Leave_management.Models;
+using leave_management.Models;
 
-namespace Leave_management.Controllers
+namespace leave_management.Controllers
 {
     public class HomeController : Controller
     {

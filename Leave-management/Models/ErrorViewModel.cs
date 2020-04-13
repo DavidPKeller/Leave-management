@@ -1,6 +1,6 @@
 using System;
 
-namespace Leave_management.Models
+namespace leave_management.Models
 {
     public class ErrorViewModel
     {
